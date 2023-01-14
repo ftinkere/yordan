@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+//Route::get('/words', [\App\Http\Controllers\WordsController::class, 'index'])->name('words.index');
+Route::resource('words', \App\Http\Controllers\WordsController::class);
